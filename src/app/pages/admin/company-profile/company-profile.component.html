@@ -1,0 +1,250 @@
+<div class="container-fluid background-light">
+
+  <app-page-title title="Profile" [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-xl-4">
+      <div class="card overflow-hidden">
+        <div class="bg-soft-primary">
+          <div class="row">
+            <div class="col-7">
+              <div class="text-primary p-3">
+                <h5 class="text-primary">Welcome Back !</h5>
+                <p>It will seem like simplified</p>
+              </div>
+            </div>
+            <div class="col-5 align-self-end">
+              <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="card-body pt-0">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="avatar-md profile-user-wid mb-4">
+                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
+              </div>
+              <h5 class="font-size-15 text-truncate"></h5>
+              <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
+            </div>
+
+            <div class="col-sm-8">
+              <div class="pt-4">
+
+                <div class="row">
+                  <div class="col-6">
+                    <h5 class="font-size-15">125</h5>
+                    <p class="text-muted mb-0">Projects</p>
+                  </div>
+                  <div class="col-6">
+                    <h5 class="font-size-15">$1245</h5>
+                    <p class="text-muted mb-0">Revenue</p>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <a href="" class="btn btn-primary btn-sm">View Profile <i class="mdi mdi-arrow-right ml-1"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card -->
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Informations</h4>
+          <div class="table-responsive">
+            <table class="table table-nowrap mb-0">
+              <tbody>
+                <tr>
+                  <th scope="row">Nom :</th>
+                  <td>{{societe.name}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ville :</th>
+                  <td>{{societe.city}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Adresse :</th>
+                  <td>{{societe.address}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end card -->
+
+      <!--      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-5">Experience</h4>
+          <div class="">
+            <ul class="verti-timeline list-unstyled">
+              <li class="event-list active">
+                <div class="event-timeline-dot">
+                  <i class="bx bx-right-arrow-circle bx-fade-right"></i>
+                </div>
+                <div class="media">
+                  <div class="mr-3">
+                    <i class="bx bx-server h4 text-primary"></i>
+                  </div>
+                  <div class="media-body">
+                    <div>
+                      <h5 class="font-size-15"><a href="javascript: void(0);" class="text-dark">Back end Developer</a></h5>
+                      <span class="text-primary">2016 - 19</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="event-list">
+                <div class="event-timeline-dot">
+                  <i class="bx bx-right-arrow-circle"></i>
+                </div>
+                <div class="media">
+                  <div class="mr-3">
+                    <i class="bx bx-code h4 text-primary"></i>
+                  </div>
+                  <div class="media-body">
+                    <div>
+                      <h5 class="font-size-15"><a href="javascript: void(0);" class="text-dark">Front end Developer</a></h5>
+                      <span class="text-primary">2013 - 16</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="event-list">
+                <div class="event-timeline-dot">
+                  <i class="bx bx-right-arrow-circle"></i>
+                </div>
+                <div class="media">
+                  <div class="mr-3">
+                    <i class="bx bx-edit h4 text-primary"></i>
+                  </div>
+                  <div class="media-body">
+                    <div>
+                      <h5 class="font-size-15"><a href="javascript: void(0);" class="text-dark">UI /UX Designer</a></h5>
+                      <span class="text-primary">2011 - 13</span>
+
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>-->
+      <!-- end card -->
+    </div>
+
+    <div class="col-xl-8">
+
+      <div class="row">
+        <div class="col-md-4">
+          <app-stat [title]="statDataEmployee.title" [value]="statDataEmployee.value" [icon]="statDataEmployee.icon">
+          </app-stat>
+        </div>
+        <div class="col-md-4">
+          <app-stat [title]="statDataPoll.title" [value]="statDataPoll.value" [icon]="statDataPoll.icon"></app-stat>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Nombre de Reponse par Question</h4>
+          <div class="table-responsive">
+            <table class="table table-nowrap table-hover mb-0">
+              <thead>
+                <tr class="colors">
+                  <th scope="col">Question</th>
+                  <th scope="col">Reponse</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor=" let poll of polls">
+                  <th scope="row">{{poll.question}}</th>
+                  <td scope="row">{{poll.Answers.length}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Stats</h4>
+        <ng-container *ngIf="dataLoaded">
+          <div echarts [options]="barChart" (chartInit)="chartInit($event)" class="demo-chart"></div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title mb-4">List des clubs </h4>
+      <div class="table-responsive">
+        <table class="table table-nowrap table-hover mb-0">
+          <thead>
+            <tr class="colors">
+              <th scope="col">Nom</th>
+              <th scope="col">Description </th>
+              <th scope="col"> Club Sponsorisé?</th>
+              <th scope="col">Nombre De Membre Du Club</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let club of listClubs">
+              <th scope="row">{{club.name}}</th>
+              <td>{{club.description}}</td>
+              <td>{{club.sponsored == true? 'Oui':'NON'}}</td>
+              <td style="text-align: center">{{club.Members.length}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title mb-4">List des employers</h4>
+      <div class="table-responsive">
+        <table class="table table-nowrap table-hover mb-0">
+          <thead>
+            <tr class="colors">
+              <th scope="col">Email</th>
+              <th scope="col">Nom ET Prenom </th>
+              <th scope="col">Personalité</th>
+              <th scope="col">Poste</th>
+              <th scope="col">Telephone</th>
+              <th scope="col">Sexe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of listemployee">
+              <th scope="row">{{employee.email}}</th>
+              <td>{{employee.first_name}} {{employee.last_name}}</td>
+              <td>{{employee.tbr_personality}}</td>
+              <td>{{employee.position}}</td>
+              <td>{{employee.phone}}</td>
+              <td>{{employee.gender == 1? 'Homme': employee.gender == 2? 'Femme':'Undefined'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+<!-- end row -->

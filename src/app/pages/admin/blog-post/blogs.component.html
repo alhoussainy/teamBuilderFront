@@ -1,0 +1,30 @@
+<div class="container-fluid background-light mt-4">
+  <div class="row myTitle mt-2">
+    <h1 class="col-12  ">Publications</h1>
+  </div>
+
+  <div class="row myRow mt-2">
+    <div class="col-12" *ngFor=" let b of blog">
+      <img class=" responsive" [src]=" b.image_url" alt="">
+      <a routerLink="/blog/{{b.id}}/{{b.slug}}"><h5 class="blogs mt-3">{{b.title}}</h5></a>
+      <div>
+        <a class="bx bx-calendar">{{b.created_at | date}}</a>
+       <button class="btn btn-outline-danger ml-2" (click)="onDelete(b.id)">Suprimer</button>
+       <button class="btn btn-outline-info ml-2" (click)="onEdit(b)">Modifier</button>
+        <span class="ml-2">
+        <label for="select">Categories: </label>
+       <select id="select">
+         <option (click)="loadData()">tous</option>
+         <option  (click)="selecte(b.category =1)">qvt</option>
+         <option  (click)="selecte(b.category =2)" >les accidents de travail</option>
+       </select>
+      </span>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" [value]="b.published">
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+<div class="container-fluid background-light" >
+  <app-page-title  [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <div class="row">
+    <div class="col-lg-6" *ngIf="lineChartCompany">
+      <div class="card">
+        <div class="card-body" id="chart1">
+          <h1 class="card-title">Nombre de company: {{companyNumber}}</h1>
+          <apx-chart class="apex-charts" dir="ltr"
+                     [series]="lineChartCompany.series"
+                     [chart]="lineChartCompany.chart"
+                     [dataLabels]="lineChartCompany.dataLabels"
+                     [grid]="lineChartCompany.grid"
+                     [title]="lineChartCompany.title"
+                     [xaxis]="lineChartCompany.xaxis"
+                     [stroke]="lineChartCompany.stroke"
+                     >
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6" *ngIf="lineChartUser">
+      <div class="card">
+        <div class="card-body" id="chart">
+          <h1 class="card-title">Nombre d'Utilisateur: {{userNumber}}</h1>
+          <apx-chart class="apex-charts" dir="ltr"
+                     [series]="lineChartUser.series"
+                     [chart]="lineChartUser.chart"
+                     [dataLabels]="lineChartUser.dataLabels"
+                     [grid]="lineChartUser.grid"
+                     [title]="lineChartUser.title"
+                     [xaxis]="lineChartUser.xaxis"
+                     [stroke]="lineChartUser.stroke"
+          >
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6" *ngIf="lineChartClub">
+      <div class="card">
+        <div class="card-body" id="chart2">
+          <h1 class="card-title">Nombre de clubs: {{clubNumber}}</h1>
+          <apx-chart class="apex-charts" dir="ltr"
+                     [series]="lineChartClub.series"
+                     [chart]="lineChartClub.chart"
+                     [dataLabels]="lineChartClub.dataLabels"
+                     [grid]="lineChartClub.grid"
+                     [title]="lineChartClub.title"
+                     [xaxis]="lineChartClub.xaxis"
+                     [stroke]="lineChartClub.stroke"
+          >
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6" *ngIf="lineChartPost">
+      <div class="card">
+        <div class="card-body" id="chart3">
+          <h1 class="card-title">Nombre de publications: {{postNumber}}</h1>
+          <apx-chart class="apex-charts" dir="ltr"
+                     [series]="lineChartPost.series"
+                     [chart]="lineChartPost.chart"
+                     [dataLabels]="lineChartPost.dataLabels"
+                     [grid]="lineChartPost.grid"
+                     [title]="lineChartPost.title"
+                     [xaxis]="lineChartPost.xaxis"
+                     [stroke]="lineChartPost.stroke"
+          >
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6" *ngIf="lineChartPoll">
+      <div class="card">
+        <div class="card-body" id="chart4">
+          <h1 class="card-title">Nombre de Sondage: {{pollNumber}}</h1>
+          <apx-chart class="apex-charts" dir="ltr"
+                     [series]="lineChartPoll.series"
+                     [chart]="lineChartPoll.chart"
+                     [dataLabels]="lineChartPoll.dataLabels"
+                     [grid]="lineChartPoll.grid"
+                     [title]="lineChartPoll.title"
+                     [xaxis]="lineChartPoll.xaxis"
+                     [stroke]="lineChartPoll.stroke"
+          >
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6" *ngIf="lineChartInterview">
+      <div class="card">
+        <div class="card-body" id="chart5">
+          <h1 class="card-title">Nombre d'Entretien: {{interviewNumber}}</h1>
+          <apx-chart class="apex-charts" dir="ltr"
+                     [series]="lineChartInterview.series"
+                     [chart]="lineChartInterview.chart"
+                     [dataLabels]="lineChartInterview.dataLabels"
+                     [grid]="lineChartInterview.grid"
+                     [title]="lineChartInterview.title"
+                     [xaxis]="lineChartInterview.xaxis"
+                     [stroke]="lineChartInterview.stroke"
+          >
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6" *ngIf="lineChartMessages">
+      <div class="card">
+        <div class="card-body" id="chart6">
+          <h1 class="card-title">Nombre de Messages: {{messageNumber}}</h1>
+          <apx-chart class="apex-charts" dir="ltr"
+                     [series]="lineChartMessages.series"
+                     [chart]="lineChartMessages.chart"
+                     [dataLabels]="lineChartMessages.dataLabels"
+                     [grid]="lineChartMessages.grid"
+                     [title]="lineChartMessages.title"
+                     [xaxis]="lineChartMessages.xaxis"
+                     [stroke]="lineChartMessages.stroke"
+          >
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6" *ngIf="lineChartPersonalityTest">
+      <div class="card">
+        <div class="card-body" id="chart7">
+          <h1 class="card-title">Nombre de test de Personnalité : {{personalityTestNumber}}</h1>
+          <apx-chart class="apex-charts" dir="ltr"
+                     [series]="lineChartPersonalityTest.series"
+                     [chart]="lineChartPersonalityTest.chart"
+                     [dataLabels]="lineChartPersonalityTest.dataLabels"
+                     [grid]="lineChartPersonalityTest.grid"
+                     [title]="lineChartPersonalityTest.title"
+                     [xaxis]="lineChartPersonalityTest.xaxis"
+                     [stroke]="lineChartPersonalityTest.stroke"
+          >
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+

@@ -1,0 +1,31 @@
+.blogs{
+  font-size: 20px;
+  font-weight: bold;
+}
+.myTitle{
+  width: auto;
+  height: 80px;
+  font-size: 20px;
+  background-color: #0099f7;
+  display: flex;
+}
+.myTitle >h1{
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+.myRow {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 10px solid white;
+  box-shadow:  1px 1px 12px #c8ced3;
+}
+.contenu>p{
+  width: 100%;
+  text-align: right;
+}
+.responsive{
+  width: 100%;
+  height: auto;
+}

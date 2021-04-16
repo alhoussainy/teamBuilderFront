@@ -1,0 +1,25 @@
+<div class="container-fluid background-light mt-4">
+  <div class="row myTitle mt-2">
+    <h1 class="col-12  ">{{blog.title}}</h1>
+  </div>
+
+  <div class="row myRow mt-2">
+    <div class="col-md-12">
+      <img class="  responsive " [src]="blog.image_url" alt="">
+      <h5 class="blogs mt-3">{{blog.title}}</h5>
+      <div>
+        <a class="bx bx-calendar">{{blog.created_at | date}}</a>
+      </div>
+      <div>
+        <p [innerHTML]="blog.content" class="contenu"></p>
+      </div>
+      <div>
+        <label for="published">Published:</label>
+        <input class="ml-2" type="checkbox" [value]="blog.published" id="published">
+        <br>
+        <span>Category: {{blog.category}} </span>
+      </div>
+    </div>
+  </div>
+</div>
+
