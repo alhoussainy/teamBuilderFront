@@ -15,11 +15,10 @@
       </div>
       <div>
         <label for="published">Published:</label>
-        <input class="ml-2" type="checkbox" [value]="blog.published" id="published">
+        <span class="ml-2" id="published">{{blog.published== false ?'non':'oui'}}</span>
         <br>
         <span>Category: {{blog.category}} </span>
       </div>
     </div>
   </div>
 </div>
-

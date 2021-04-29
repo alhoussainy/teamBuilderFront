@@ -7,19 +7,6 @@ export const MENU: MenuItem[] = [
         icon: 'bx-home-circle',
         link: 'companies',
     },
-
-  {
-    id: 1001,
-    label: 'Logout',
-    icon: 'bx bx-trash',
-    link: 'logout',
-  },
-  {
-    id: 1004,
-    label: 'LogIn',
-    icon: 'bx bxs-user-circle',
-    link: 'signIn',
-  },
   {
     id: 1003,
     label: 'Stats',
@@ -33,17 +20,29 @@ export const MENU: MenuItem[] = [
     subItems:[
       {
         id:1006,
-        label:'blogpost',
+        label:'Publications',
         icon:'bx-home-circle',
         link: 'blog',
       },
       {
         id:1007,
-        label:'add-blog',
+        label:'Rediger',
         icon:'bx-home-circle',
         link: 'addBlog',
       }
     ]
+  },
+  {
+    id: 1001,
+    label: 'Logout',
+    icon: 'bx bx-trash',
+    link: 'logout',
+  },
+  {
+    id: 1004,
+    label: 'LogIn',
+    icon: 'bx bxs-user-circle',
+    link: 'signIn',
   },
 /*    /!* Template routes below *!/
     {

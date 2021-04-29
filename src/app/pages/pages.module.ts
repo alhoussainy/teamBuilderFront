@@ -68,6 +68,7 @@ import {UpdateOneBlogComponent} from "./admin/blog-post/update-one-blog/update.o
 
 
 
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 0.3

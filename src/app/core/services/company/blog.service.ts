@@ -34,7 +34,14 @@ export class BlogService {
     return this.http.delete<Response<BlogModels[]>>(`${this.pathUrl}${this.path}${id}/delete`)
   }
 
-  update(id: any, blog: any): Observable<Response<BlogModels[]>> {
-    return this.http.put<Response<BlogModels[]>>(`${this.pathUrl}${this.path}${id}/update`, blog)
+  update(id: any, blog: any): Observable<Response<BlogModels>> {
+    return this.http.put<Response<BlogModels>>(`${this.pathUrl}${this.path}${id}/update`, blog)
+  }
+  publish(blog: BlogModels): Observable<Response<BlogModels>> {
+    blog.published = !blog.published
+    return this.http.put<Response<BlogModels>>(`${this.pathUrl}${this.path}${blog.id}/update`, blog)
+  }
+  upload(formdata: FormData): any{
+    return this.http.post(`${this.pathUrl}${this.path}upload` , formdata);
   }
 }

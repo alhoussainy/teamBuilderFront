@@ -1,24 +1,30 @@
 <div class="container-fluid background-light mt-4">
   <div class="row myTitle mt-2">
-    <h1 class="col-12  ">Publications</h1>
+    <h1 class="col-6 mt-3 ">Publications</h1>
+    <div class="selecte-category col-6 mt-3">
+      <label for="select">Categories:</label>
+      <select id="select">
+        <option (click)="loadData()">tous</option>
+        <option (click)="filterGlobal(category.qvt)">qvt</option>
+        <option (click)="filterGlobal(category.stress)">stress</option>
+      </select>
+    </div>
   </div>
-
-  <div class="row myRow mt-2">
-    <div class="col-12" *ngFor=" let b of blog">
-      <img class=" responsive" [src]=" b.image_url" alt="">
-      <a routerLink="/blog/{{b.id}}/{{b.slug}}"><h5 class="blogs mt-3">{{b.title}}</h5></a>
+  <div class="row myRow mt-1 " *ngFor=" let b of blogs">
+    <div class="col-12">
+      <img class=" responsive" [src]="b.image_url" alt="">
+      <a routerLink="/blog/{{b.id}}/{{b.slug}}">
+        <h5 class="blogs mt-3">{{b.title}}</h5>
+      </a>
       <div>
         <a class="bx bx-calendar">{{b.created_at | date}}</a>
-       <button class="btn btn-outline-danger ml-2" (click)="onDelete(b.id)">Suprimer</button>
-       <button class="btn btn-outline-info ml-2" (click)="onEdit(b)">Modifier</button>
-        <span class="ml-2">
-        <label for="select">Categories: </label>
-       <select id="select">
-         <option (click)="loadData()">tous</option>
-         <option  (click)="selecte(b.category =1)">qvt</option>
-         <option  (click)="selecte(b.category =2)" >les accidents de travail</option>
-       </select>
-      </span>
+        <button class="btn btn-outline-danger ml-2" (click)="onDelete(b.id)">Suprimer</button>
+        <button class="btn btn-outline-info ml-2" (click)="onEdit(b)">Modifier</button>
+        <span class="ml-2">Publié? :</span>
+        <button (click)="onSelect(b)" [ngClass]="b.published?'btn-success':'btn-danger'" class="btn btn-success ml-2">
+          <span *ngIf="b.published">oui</span>
+          <span *ngIf="!b.published">non</span>
+        </button>
       </div>
       <div>
         <label>

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 import {Router} from "@angular/router";
 import {BlogService} from "../../../../core/services/company/blog.service";
 import {BlogModels} from "../../../../core/models/blog.models";
@@ -15,7 +15,7 @@ export class AddBlogComponent {
   formGroup: FormGroup;
   public Editor = ClassicEditor;
   constructor(private blogService: BlogService,
-              private  router: Router, private fb: FormBuilder) {
+              private  router: Router, private fb: FormBuilder, private elementref: ElementRef) {
   }
 
   ngOnInit() {
@@ -37,5 +37,16 @@ export class AddBlogComponent {
         this.router.navigate(['error'])
       }
     }))
+  }
+
+  upload() {
+    const  inputEl: HTMLInputElement = this.elementref.nativeElement.querySelector('#image');
+    const formData = new FormData();
+    formData.append('image', inputEl.files.item(0));
+
+    this.blogService.upload(formData).subscribe(
+      (data: any) => {},
+      (error: any) => {console.error(error); }
+    );
   }
 }

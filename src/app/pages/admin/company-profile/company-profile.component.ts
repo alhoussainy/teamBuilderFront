@@ -112,7 +112,6 @@ export class CompanyProfileComponent implements OnInit {
     const id = this.router.snapshot.params.id
     this.companyService.details(id).subscribe(
       res => {
-        console.log(res)
         if (res.success) {
           this.societe.name = res.data.company.name
           this.societe.city = res.data.company.city

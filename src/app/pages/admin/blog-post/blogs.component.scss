@@ -19,10 +19,15 @@
 }
 .myTitle >h1{
   color: white;
-  margin: auto;
+}
+.myTitle >div{
+  text-align: right;
+  color: white;
 }
 .responsive{
   width: 100%;
   height: auto;
 }
-
+.category{
+  float: right;
+}

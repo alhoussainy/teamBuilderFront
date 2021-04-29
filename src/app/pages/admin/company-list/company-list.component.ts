@@ -101,7 +101,6 @@ export class CompanyListComponent implements OnInit {
 
   loadCompanies(){
     this.companyService.listCompanies().subscribe((res) => {
-      console.log(res)
       if (res.success){
         this.companies = res.data.companyList;
 
@@ -128,10 +127,8 @@ export class CompanyListComponent implements OnInit {
   onUpdate(companyId: string, active: any) {
        this.companyService.update(companyId , active).subscribe(
          (data)=>{
-           console.log(data)
            this.loadCompanies();
          },(err)=>{
-           console.log(err)
          }
        )
   }

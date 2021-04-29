@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   defaultauth: 'fackbackend',
   firebaseConfig: {
     apiKey: '',
@@ -15,8 +15,7 @@ export const environment = {
     appId: '',
     measurementId: ''
   },
-  apiUrl: 'http://localhost:7777/',
-  awsUrl: 'https://djougouya.s3.eu-west-3.amazonaws.com/'
+  apiUrl: 'https://dev.sv1.admin-api.teambuildr.fr/'
 };
 
 /*
