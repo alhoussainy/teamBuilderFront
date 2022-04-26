@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-
-
 import { ActivatedRoute, Router } from "@angular/router";
 import { BlogService } from "../../../core/services/company/blog.service";
 import { BlogModels } from "../../../core/models/blog.models";

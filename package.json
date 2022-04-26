@@ -26,6 +26,10 @@
     "@angular/router": "~10.0.2",
     "@ckeditor/ckeditor5-angular": "^1.1.2",
     "@ckeditor/ckeditor5-build-classic": "^16.0.0",
+    "@ckeditor/ckeditor5-ckfinder": "^27.1.0",
+    "@ckeditor/ckeditor5-editor-classic": "^27.1.0",
+    "@ckeditor/ckeditor5-image": "^27.1.0",
+    "@ckeditor/ckeditor5-upload": "^27.1.0",
     "@fullcalendar/angular": "^4.4.5-beta",
     "@fullcalendar/bootstrap": "^4.4.0",
     "@fullcalendar/core": "^4.4.0",
@@ -71,6 +75,7 @@
     "sass-loader": "^8.0.2",
     "sweetalert2": "^9.7.1",
     "tslib": "^2.0.0",
+    "xlsx": "^0.17.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

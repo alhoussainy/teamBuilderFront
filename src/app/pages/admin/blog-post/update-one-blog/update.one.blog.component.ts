@@ -54,8 +54,7 @@ iniForm(){
     formData.append('image', inputEl.files.item(0));
 
     this.blogService.upload(formData).subscribe(
-      (data: any) => {
-        console.log(data); },
+      (data: any) => {},
       (error: any) => {console.error(error); }
     );
   }

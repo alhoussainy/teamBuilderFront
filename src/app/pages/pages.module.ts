@@ -7,11 +7,11 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import {
-  NgbNavModule,
-  NgbDropdownModule,
-  NgbModalModule,
-  NgbTooltipModule,
-  NgbAlertModule
+    NgbNavModule,
+    NgbDropdownModule,
+    NgbModalModule,
+    NgbTooltipModule,
+    NgbAlertModule, NgbProgressbarModule
 } from '@ng-bootstrap/ng-bootstrap';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
@@ -46,23 +46,29 @@ import {LoaderInterceptorService} from '../core/services/interceptors/loader-int
 
 
 // Admin components
-import {CompanyListComponent, NgbdSortableHeader} from './admin/company-list/company-list.component';
-import {CompanyProfileComponent} from "./admin/company-profile/company-profile.component";
+import {CompanyListComponent, SortableHeader} from './admin/company/company-list/company-list.component';
+import {CompanyProfileComponent} from "./admin/company/company-profile/company-profile.component";
 import {NgxEchartsModule} from "ngx-echarts";
 import {LoginComponent} from "./admin/login/login.component";
 import {ErrorComponent} from "./admin/error/error.component";
 import {LogoutComponent} from "./admin/logout/logout.component";
 import {
   CompanyListSortTableComponent,
-} from "./admin/company-list/company-list-sort-table.component";
+} from "./admin/company/company-list/company-list-sort-table.component";
 
 
-import {CompanyStatisticsComponent} from "./admin/company-Statistics/company.statistics.component";
+import {CompanyStatisticsComponent} from "./admin/company/company-Statistics/company.statistics.component";
 import {BlogsComponent} from "./admin/blog-post/blogs.component";
 import {AddBlogComponent} from "./admin/blog-post/add-blog-post/add.blog.component";
 import {CKEditorModule} from "@ckeditor/ckeditor5-angular";
 import {OneBlogComponent} from "./admin/blog-post/get-one-blog/one.blog.component";
 import {UpdateOneBlogComponent} from "./admin/blog-post/update-one-blog/update.one.blog.component";
+import {PublicTestComponent} from "./admin/public-test/public.test.component";
+import {DetailTrimojiComponent, Sortabledetail1,} from "./admin/public-test/detailTrimoji/détail.trimoji.component";
+import {detailSortTableComponent} from "./admin/public-test/detailTrimoji/detail-trimoji-sort-table.component";
+import {DetailPersonality} from "./admin/public-test/detailTypePersonalite/détail.personalite.component";
+import {DetailQualiteDefaut} from "./admin/public-test/detailQualiteDefaut/détail.qualite.defaut.component";
+import {detailPersoSortTableComponent} from "./admin/public-test/detailQualiteDefaut/detail.personalite.sorttable.component";
 
 
 
@@ -75,44 +81,47 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
-  declarations: [CalendarComponent, ChatComponent, CompanyListComponent ,CompanyProfileComponent,
-    LoginComponent,ErrorComponent,LogoutComponent,CompanyListSortTableComponent,UpdateOneBlogComponent
-    ,NgbdSortableHeader,CompanyStatisticsComponent,BlogsComponent,AddBlogComponent,OneBlogComponent
+  declarations: [CalendarComponent, ChatComponent, CompanyListComponent ,
+    CompanyProfileComponent, LoginComponent,ErrorComponent,LogoutComponent,Sortabledetail1,
+    CompanyListSortTableComponent,UpdateOneBlogComponent,SortableHeader,DetailQualiteDefaut,
+    CompanyStatisticsComponent,BlogsComponent,AddBlogComponent,DetailPersonality,detailPersoSortTableComponent,
+    OneBlogComponent,PublicTestComponent,DetailTrimojiComponent,detailSortTableComponent
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    NgbDropdownModule,
-    NgbModalModule,
-    PagesRoutingModule,
-    NgApexchartsModule,
-    ReactiveFormsModule,
-    DashboardsModule,
-    CryptoModule,
-    EcommerceModule,
-    EmailModule,
-    InvoicesModule,
-    HttpClientModule,
-    ProjectsModule,
-    UIModule,
-    TasksModule,
-    ContactsModule,
-    UtilityModule,
-    UiModule,
-    FormModule,
-    TablesModule,
-    IconsModule,
-    ChartModule,
-    WidgetModule,
-    MapsModule,
-    FullCalendarModule,
-    NgbNavModule,
-    NgbTooltipModule,
-    PerfectScrollbarModule,
-    NgxEchartsModule,
-    NgbAlertModule,
-    CKEditorModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        NgbDropdownModule,
+        NgbModalModule,
+        PagesRoutingModule,
+        NgApexchartsModule,
+        ReactiveFormsModule,
+        DashboardsModule,
+        CryptoModule,
+        EcommerceModule,
+        EmailModule,
+        InvoicesModule,
+        HttpClientModule,
+        ProjectsModule,
+        UIModule,
+        TasksModule,
+        ContactsModule,
+        UtilityModule,
+        UiModule,
+        FormModule,
+        TablesModule,
+        IconsModule,
+        ChartModule,
+        WidgetModule,
+        MapsModule,
+        FullCalendarModule,
+        NgbNavModule,
+        NgbTooltipModule,
+        PerfectScrollbarModule,
+        NgxEchartsModule,
+        NgbAlertModule,
+        CKEditorModule,
+        NgbProgressbarModule
+    ],
   providers: [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,

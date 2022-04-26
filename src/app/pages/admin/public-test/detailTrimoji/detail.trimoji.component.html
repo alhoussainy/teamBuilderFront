@@ -1,0 +1,79 @@
+<div class="container-fluid background-light ">
+
+  <app-page-title [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <span>test court</span><label class="switch  ">
+    <input type="checkbox" (change)="detail($event)">
+    <span class="slider round  "></span>
+  </label><span>test long</span>
+  <div *ngIf="data">
+    <p> Nb de personnes qui ont reçu leur profil complet: {{data.nbPC}}</p>
+    <p>Nb de test issues d' un partage: {{data.nbPartage}}</p>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title mb-4">Détail Trimoji </h4>
+      <button class="btn btn-primary" (click)="export()">export</button>
+      <div class="table-responsive" #TABLE>
+        <table class="table  table-hover mb-0 excel">
+          <thead>
+            <tr id="colors">
+              <th class="text-wrap" sortable="id" (sort)="onSort($event)" scope="col">MBTI</th>
+              <th class="text-wrap" sortable="name" (sort)="onSort($event)" scope="col">Type de Personnalités</th>
+              <th class="text-wrap" sortable="percentPop" (sort)="onSort($event)" scope="col"> % de la Population</th>
+              <th class="text-wrap" sortable="percentGlobalFeedback" (sort)="onSort($event)" scope="col">Avis sur
+                l'analyse du trimoji
+              </th>
+              <th class="text-wrap" sortable="percentManagement" (sort)="onSort($event)" scope="col">Structure de
+                Management
+              </th>
+              <th class="text-wrap" sortable="percentMotivation" (sort)="onSort($event)" scope="col">Motivation au
+                travail
+              </th>
+              <th class="text-wrap" sortable="percentEnvironment" (sort)="onSort($event)" scope="col">Rythme de Travail
+              </th>
+              <th class="text-wrap" sortable="Trimojis" (sort)="onSort($event)" scope="col">emojis</th>
+            </tr>
+          </thead>
+          <tbody class="mybody"  *ngFor="let test of TestDetail">
+
+            <tr>
+              <span> <a routerLink="/detailPersonality/{{test.id}}/{{test.type}}/{{test.name}}"> <button
+                    class="btn btn-info">detail</button>
+                  <th>{{test.id}}</th>
+                </a></span>
+              <th>{{test.name}}</th>
+              <th>
+                <ngb-progressbar height="40px" [showValue]="true" type="primary" textType="dark"
+                  value="{{test.percentPop }}" [max]="100">
+                </ngb-progressbar>
+              </th>
+              <td>
+                <ngb-progressbar height="40px" [showValue]="true" type="secondary" textType="dark"
+                  value="{{test.percentGlobalFeedback}}" [max]="100">
+                </ngb-progressbar>
+              </td>
+              <td>
+                <ngb-progressbar height="40px" [showValue]="true" type="success" textType="dark"
+                  value="{{test.percentManagement}}" [max]="100">
+                </ngb-progressbar>
+              </td>
+              <td>
+                <ngb-progressbar height="40px" [showValue]="true" type="danger" textType="dark"
+                  value="{{test.percentMotivation}}" [max]="100">
+                </ngb-progressbar>
+              </td>
+              <td>
+                <ngb-progressbar height="40px" [showValue]="true" type="warning" textType="dark"
+                  value=" {{test.percentEnvironment}}" [max]="100">
+                </ngb-progressbar>
+              </td>
+              <td>{{getTrimojiFromPersonality(test.id)}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+    </div>

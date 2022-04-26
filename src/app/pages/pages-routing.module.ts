@@ -4,18 +4,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ChatComponent } from './chat/chat.component';
 import { DefaultComponent } from './dashboards/default/default.component';
-import { CompanyListComponent } from './admin/company-list/company-list.component';
-import {CompanyProfileComponent} from "./admin/company-profile/company-profile.component";
+import { CompanyListComponent } from './admin/company/company-list/company-list.component';
+import {CompanyProfileComponent} from "./admin/company/company-profile/company-profile.component";
 import {LoginComponent} from "./admin/login/login.component";
 import {ErrorComponent} from "./admin/error/error.component";
 import {LogoutComponent} from "./admin/logout/logout.component";
 import {
   CompanyStatisticsComponent
-} from "./admin/company-Statistics/company.statistics.component";
+} from "./admin/company/company-Statistics/company.statistics.component";
 import {BlogsComponent} from "./admin/blog-post/blogs.component";
 import {AddBlogComponent} from "./admin/blog-post/add-blog-post/add.blog.component";
 import {OneBlogComponent} from "./admin/blog-post/get-one-blog/one.blog.component";
 import {UpdateOneBlogComponent} from "./admin/blog-post/update-one-blog/update.one.blog.component";
+import {PublicTestComponent} from "./admin/public-test/public.test.component";
+import {DetailTrimojiComponent} from "./admin/public-test/detailTrimoji/détail.trimoji.component";
+import {DetailPersonality} from "./admin/public-test/detailTypePersonalite/détail.personalite.component";
+import {DetailQualiteDefaut} from "./admin/public-test/detailQualiteDefaut/détail.qualite.defaut.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'signIn' },
@@ -35,7 +39,10 @@ const routes: Routes = [
   { path: 'addBlog', component: AddBlogComponent },
   { path: 'blog/:id/:slug?', component: OneBlogComponent },
   { path: 'edit/:id', component: UpdateOneBlogComponent },
-
+  { path: 'publicTest', component: PublicTestComponent },
+  { path: 'detailTrimoji', component: DetailTrimojiComponent },
+  { path: 'detailPersonality/:id/:type/:name', component: DetailPersonality },
+  { path: 'detailQualiteDefaut', component: DetailQualiteDefaut },
 
   // Template components
   { path: 'dashboards', loadChildren: () => import('./dashboards/dashboards.module').then(m => m.DashboardsModule) },

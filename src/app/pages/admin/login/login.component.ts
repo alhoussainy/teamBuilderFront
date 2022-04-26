@@ -19,9 +19,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   submitted = false;
-  error = '';
-
-
+  error = ''
   // set the currenr year
   year: number = new Date().getFullYear();
 
@@ -44,6 +42,7 @@ export class LoginComponent implements OnInit {
    * Form submit
    */
   onSubmit():any {
+
     this.submitted = true;
       this.service.login(this.loginForm.value)
         .pipe(first())

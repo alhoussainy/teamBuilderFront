@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {CommonService} from '../common.service';
-import {Response} from '../response';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { CommonService } from '../common.service';
+import { Response } from '../response';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class StatService {
   public apiUrl: string = null;
 
@@ -13,7 +13,6 @@ export class StatService {
 
   constructor(private http: HttpClient, public CommonService: CommonService) {
     this.apiUrl = CommonService.apiUrl;
-
   }
 
   stats(): Observable<Response<any>> {

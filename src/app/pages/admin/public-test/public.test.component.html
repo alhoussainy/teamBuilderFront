@@ -1,0 +1,104 @@
+<div class="container-fluid background-light">
+  <app-page-title [breadcrumbItems]="breadCrumbItems"></app-page-title>
+  <button class="btn btn-primary" (click)="export()">export email</button>
+  <div class="row">
+    <div class="col-lg-6 testTotal " *ngIf="simplePieChart">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Total de tests > {{totalTest}} </h4>
+
+          <apx-chart class="apex-charts" dir="ltr" [series]="simplePieChart.series" [chart]="simplePieChart.chart"
+            [labels]="simplePieChart.labels" [legend]="simplePieChart.legend" [colors]="simplePieChart.colors"
+            [responsive]="simplePieChart.responsive">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-lg" *ngIf="barChartTestGlobal">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Analyse de personnalité (global)</h4>
+          <h5 class="font-weight-bold">Nb retours : {{nbperso}}({{perPerso}}%)</h5> <a
+            routerLink="/detailQualiteDefaut"> <button class="btn btn-outline-info ml-3">détail
+              personnalite</button></a>
+          <apx-chart class="apex-charts" dir="ltr" [series]="barChartTestGlobal.series"
+            [chart]="barChartTestGlobal.chart" [plotOptions]="barChartTestGlobal.plotOptions"
+            [dataLabels]="barChartTestGlobal.dataLabels" [xaxis]="barChartTestGlobal.xaxis"
+            [colors]="barChartTestGlobal.colors" [grid]="barChartTestGlobal.grid"></apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg" *ngIf="barChartTestLong">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Analyse de personnalité (15 min)</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="barChartTestLong.series" [chart]="barChartTestLong.chart"
+            [plotOptions]="barChartTestLong.plotOptions" [dataLabels]="barChartTestLong.dataLabels"
+            [xaxis]="barChartTestLong.xaxis" [colors]="barChartTestLong.colors" [grid]="barChartTestLong.grid">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg" *ngIf="barChartTestCourt">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Analyse de personnalité (1 min)</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="barChartTestCourt.series" [chart]="barChartTestCourt.chart"
+            [plotOptions]="barChartTestCourt.plotOptions" [dataLabels]="barChartTestCourt.dataLabels"
+            [xaxis]="barChartTestCourt.xaxis" [colors]="barChartTestCourt.colors" [grid]="barChartTestCourt.grid">
+          </apx-chart>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg" *ngIf="barChartTrimojiGlobal">
+      <div class="card">
+        <div class="card-body">
+          <div class="detail">
+            <h4 class="card-title mb-4">trimoji (global)</h4>
+            <h5 class="font-weight-bold">Nb retours : {{nbtrimojis}}({{perTrimojis}}%)</h5> <a
+              routerLink="/detailTrimoji"> <button class="btn btn-outline-success ml-3">détail trimoji</button></a>
+          </div>
+          <apx-chart class="apex-charts" dir="ltr" [series]="barChartTrimojiGlobal.series"
+            [chart]="barChartTrimojiGlobal.chart" [plotOptions]="barChartTrimojiGlobal.plotOptions"
+            [dataLabels]="barChartTrimojiGlobal.dataLabels" [xaxis]="barChartTrimojiGlobal.xaxis"
+            [colors]="barChartTrimojiGlobal.colors" [grid]="barChartTrimojiGlobal.grid"></apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg" *ngIf="barChartTrimojiTestLong">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4"> trimoji (15 min)</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="barChartTrimojiTestLong.series"
+            [chart]="barChartTrimojiTestLong.chart" [plotOptions]="barChartTrimojiTestLong.plotOptions"
+            [dataLabels]="barChartTrimojiTestLong.dataLabels" [xaxis]="barChartTrimojiTestLong.xaxis"
+            [colors]="barChartTrimojiTestLong.colors" [grid]="barChartTrimojiTestLong.grid"></apx-chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg" *ngIf="barChartTrimojiTestCourt">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-4"> trimoji (1 min)</h4>
+          <apx-chart class="apex-charts" dir="ltr" [series]="barChartTrimojiTestCourt.series"
+            [chart]="barChartTrimojiTestCourt.chart" [plotOptions]="barChartTrimojiTestCourt.plotOptions"
+            [dataLabels]="barChartTrimojiTestCourt.dataLabels" [xaxis]="barChartTrimojiTestCourt.xaxis"
+            [colors]="barChartTrimojiTestCourt.colors" [grid]="barChartTrimojiTestCourt.grid"></apx-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

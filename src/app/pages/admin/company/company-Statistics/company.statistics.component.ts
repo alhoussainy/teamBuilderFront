@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {StatService} from "../../../core/services/company/stat.service";
+import {StatService} from "../../../../core/services/company/stat.service";
 import {Router} from "@angular/router";
-import {ChartType} from "../../chart/apex/apex.model";
+import {ChartType} from "../../../chart/apex/apex.model";
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -66,8 +66,13 @@ export class CompanyStatisticsComponent implements OnInit {
     this.breadCrumbItems = [{label: 'Contacts'}, {label: 'Profile', active: true}];
     this.statService.stats().subscribe((res) => {
       if (res.success) {
-        this.companyNumber = res.data.companySeries.length;
-        this.postNumber = res.data.postSerie.length
+        console.log(res.data)
+
+
+        //this.postNumber = res.data.postSerie.length
+        const reducer = (accumulator, curr) => accumulator + curr;
+        this.postNumber = res.data.postSerie.reduce(reducer)
+
 
         this.lineChartPost = {
           series: [{
@@ -117,7 +122,7 @@ export class CompanyStatisticsComponent implements OnInit {
           },
 
         };
-
+        this.companyNumber = res.data.companySeries.reduce(reducer)
         this.lineChartCompany = {
           series: [{
             name: 'companySeries',
@@ -168,7 +173,7 @@ export class CompanyStatisticsComponent implements OnInit {
 
         };
 
-        this.userNumber = res.data.userSeries.length;
+        this.userNumber = res.data.userSeries.reduce(reducer);
 
         this.lineChartUser = {
           series: [{
@@ -219,7 +224,7 @@ export class CompanyStatisticsComponent implements OnInit {
           },
 
         };
-        this.clubNumber = res.data.userSeries.length;
+        this.clubNumber = res.data.clubSeries.reduce(reducer);
 
         this.lineChartClub = {
           series: [{
@@ -262,7 +267,7 @@ export class CompanyStatisticsComponent implements OnInit {
 
         };
 
-        this.pollNumber = res.data.pollSeries.length
+        this.pollNumber = res.data.pollSeries.reduce(reducer)
 
         this.lineChartPoll = {
           series: [{
@@ -304,7 +309,7 @@ export class CompanyStatisticsComponent implements OnInit {
           },
 
         };
-        this.interviewNumber = res.data.interviewSerie.length
+        this.interviewNumber = res.data.interviewSerie.reduce(reducer)
 
         this.lineChartInterview = {
           series: [{
@@ -347,7 +352,7 @@ export class CompanyStatisticsComponent implements OnInit {
 
         };
 
-        this.messageNumber = res.data.messagesSeries.length
+        this.messageNumber = res.data.messagesSeries.reduce(reducer)
         this.lineChartMessages = {
           series: [{
             name: 'messagesSeries',
@@ -389,7 +394,7 @@ export class CompanyStatisticsComponent implements OnInit {
 
         };
 
-        this.personalityTestNumber = res.data.totalTestPersonalitySerie.length
+        this.personalityTestNumber = res.data.totalTestPersonalitySerie.reduce(reducer)
         this.lineChartPersonalityTest = {
           series: [{
             name: 'personalityTest',

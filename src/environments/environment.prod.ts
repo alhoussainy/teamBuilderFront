@@ -11,5 +11,6 @@ export const environment = {
     appId: '',
     measurementId: ''
   },
-  apiUrl: 'https://admin-api.teambuildr.fr/'
+  apiUrl: 'https://admin-api.teambuildr.fr/',
+  awsUrl: 'https://djougouya.s3.eu-west-3.amazonaws.com/'
 };

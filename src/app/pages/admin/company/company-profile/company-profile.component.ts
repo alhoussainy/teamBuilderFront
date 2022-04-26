@@ -1,8 +1,8 @@
-import {Component,  OnInit} from '@angular/core';
-import {CompanyService} from '../../../core/services/company/company.service';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { CompanyService } from '../../../../core/services/company/company.service';
 
-import {ActivatedRoute, Router} from "@angular/router";
-
+import { ActivatedRoute, Router } from "@angular/router";
+import * as XLSX from 'xlsx';
 
 
 @Component({
@@ -16,8 +16,8 @@ export class CompanyProfileComponent implements OnInit {
 
 
 
-   barChart: any = {
-     color: ['#50a5f1'],
+  barChart: any = {
+    color: ['#50a5f1'],
     tooltip: {
       trigger: 'axis',
       axisPointer: {
@@ -68,6 +68,7 @@ export class CompanyProfileComponent implements OnInit {
       data: null
     }]
   };
+
   statDataEmployee = {
     icon: 'bx bx-check-circle',
     title: "nombre d'employé(s)",
@@ -87,19 +88,21 @@ export class CompanyProfileComponent implements OnInit {
   };
 
   listemployee: any[] = [];
-  listClubs: any[]=[]
+  listClubs: any[] = []
   polls: any[] = [];
   id: string;
 
-   chartInstance: any;
-   dataLoaded: boolean = false;
+  chartInstance: any;
+  dataLoaded: boolean = false;
 
-  constructor(private companyService: CompanyService, private router: ActivatedRoute , private  route: Router) {
+  constructor(private companyService: CompanyService,
+    private router: ActivatedRoute,
+    private route: Router, private elementref: ElementRef) {
 
   }
 
   ngOnInit() {
-    this.breadCrumbItems = [{label: 'Contacts'}, {label: 'Profile', active: true}];
+    this.breadCrumbItems = [{ label: 'Contacts' }, { label: 'Profile', active: true }];
     // fetches the data
     this._fetchData();
   }
@@ -120,26 +123,47 @@ export class CompanyProfileComponent implements OnInit {
           this.statDataEmployee.value = res.data.users.length;
           this.statDataPoll.value = res.data.poll.length
           this.polls = res.data.poll
+          console.log(this.polls);
+
           this.listClubs = res.data.club
-
-
-
           this.barChart.xAxis[0].data = res.data.label;
           this.barChart.series[0].data = res.data.dataset;
           this.dataLoaded = true;
 
         }
-      },(err)=>{
-        if(err.status == 401){
+      }, (err) => {
+        if (err.status == 401) {
           this.route.navigate(['error'])
         }
       }
     );
   }
+  export() {
+    //const ele = this.elementref.nativeElement.querySelector('.excel');
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.listemployee);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, 'ExcelSheet.xlsx');
+  }
 
+  export1() {
+    //const ele = this.elementref.nativeElement.querySelector('.excel');
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.listClubs);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, 'ExcelSheet.xlsx');
+  }
+
+  export2() {
+    //const ele = this.elementref.nativeElement.querySelector('.excel');
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.polls);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, 'ExcelSheet.xlsx');
+  }
 
   chartInit(ec) {
-     this.chartInstance = ec;
-     this.chartInstance.setOption(this.barChart , true);
+    this.chartInstance = ec;
+    this.chartInstance.setOption(this.barChart, true);
   }
 }

@@ -1,0 +1,49 @@
+<div class="container-fluid background-light   ">
+  <app-page-title [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+  <span>test court</span><label class="switch  ">
+    <input type="checkbox" (change)="detail($event)">
+    <span class="slider round  "></span>
+  </label><span>test long</span>
+  <div class="row center m-auto">
+    <div class="col-lg-12  ">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-nowrap table-hover mb-0">
+              <thead >
+                <tr >
+                  <th class="colors" scope="col">MBTI</th>
+                  <th class="colors" scope="col">Personnalités </th>
+                  <th class="colors" scope="col"> Pourcentage Population</th>
+                  <th class="colors" scope="col">qualite1</th>
+                  <th class="colors" scope="col">qualite2</th>
+                  <th class="colors" scope="col">qualite3</th>
+                  <th class="colors" scope="col">qualite4</th>
+                  <th class="colors" scope="col">qualite5</th>
+                  <th class="colors" scope="col">qualite6</th>
+                  <th class="défaut" scope="col">défaut1</th>
+                  <th class="défaut" scope="col">défaut2</th>
+                  <th class="défaut" scope="col">défaut3</th>
+                  <th class="défaut" scope="col">défaut4</th>
+                  <th class="défaut" scope="col">défaut5</th>
+                  <th class="défaut" scope="col">défaut6</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let d of Detail">
+                <tr>
+                  <th scope="row">{{d.id}}</th>
+                  <td scope="col">{{d.name}}</td>
+                  <td scope="col">{{d.pourcentagePop}}%</td>
+                  <td *ngFor="let data of d.qualitesGlobale | keyvalue:reverseKeyOrder">
+                    <b class="text-wrap">{{data.value.name}}({{data.value.value/data.value.occurences}}%) </b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container-fluid background-light   ">
+  <app-page-title [breadcrumbItems]="breadCrumbItems"></app-page-title>
+
+
+  <h1 class="center">{{TestDetail}}-{{name}}</h1>
+  <div class="row center m-auto" >
+
+    <div class="col-lg-6 d-lex wrap " *ngFor="let data of tabdata | keyvalue">
+      <div class="card">
+        <div class="card-body" >
+          <h4 class="card-title  center">{{data.value.question}}?</h4>
+
+          <div>
+            <b> D'accord</b>
+            <ngb-progressbar height="30px"  type="success" textType="dark"
+                             value=" {{data.value.agreed}}"  >{{data.value.agreed}}
+            </ngb-progressbar>
+          </div>
+          <div>
+            <b> Pas d'accord</b>
+            <ngb-progressbar height="30px"   type="warning" textType="dark"
+                             value=" {{data.value.disagreed}}"  >{{data.value.disagreed}}
+            </ngb-progressbar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

@@ -18,7 +18,7 @@
       </a>
       <div>
         <a class="bx bx-calendar">{{b.created_at | date}}</a>
-        <button class="btn btn-outline-danger ml-2" (click)="onDelete(b.id)">Suprimer</button>
+        <button class="btn btn-outline-danger ml-2" (click)="onDelete(b.id)">Supprimer</button>
         <button class="btn btn-outline-info ml-2" (click)="onEdit(b)">Modifier</button>
         <span class="ml-2">Publié? :</span>
         <button (click)="onSelect(b)" [ngClass]="b.published?'btn-success':'btn-danger'" class="btn btn-success ml-2">

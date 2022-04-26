@@ -7,16 +7,15 @@
         <div class="form-group row">
           <label for="example-text-input" class="col-md-2 col-form-label">Titre</label>
           <div class="col-md-10">
-            <input class="form-control" formControlName="title" type="text"  id="example-text-input">
+            <input class="form-control" formControlName="title" type="text" id="example-text-input">
           </div>
         </div>
 
 
         <div class="form-group row">
-          <label for="image"  class="col-md-2 col-form-label">image:</label>
+          <label for="image" class="col-md-2 col-form-label">image:</label>
           <div class="col-md-10  ">
-            <input type="file" name="image" id="image" formControlName="image_url" class="form-control">
-            <button type="button" id="upload" (click)="upload()"  >upload image</button>
+            <input type="text" name="image" id="image" formControlName="image_url" class="form-control">
           </div>
         </div>
 
@@ -29,7 +28,7 @@
         <div class="form-group row">
           <label for="example-text-input" class="col-md-2 col-form-label">Contenu</label>
           <div class="col-md-10">
-            <ckeditor [editor]="Editor" class="form-control" formControlName="content" ></ckeditor>
+            <ckeditor [editor]="Editor" class="form-control" formControlName="content"></ckeditor>
           </div>
         </div>
         <div class="mt-10">
